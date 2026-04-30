@@ -2,9 +2,9 @@ name: Web App Demo CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build-test-scan:
@@ -26,12 +26,8 @@ jobs:
       - name: Run Unit Tests (Pytest)
         run: pytest -v --disable-warnings
 
-      # - name: Run Security Scan (Bandit)
-      #   run: bandit -r .
       - name: Run Security Scan (Bandit)
-        run: |
-          bandit -r .
-        continue-on-error: true
+        run: bandit -r .
 
   docker-deploy:
     runs-on: ubuntu-latest
