@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Addition Web App</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+
+    <h1>Simple Addition Web App</h1>
+
+    <form method="POST">
+        <label>First number:</label><br>
+        <input type="number" name="num1" required><br><br>
+
+        <label>Second number:</label><br>
+        <input type="number" name="num2" required><br><br>
+
+        <button type="submit">Add</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+
+</body>
+</html>
