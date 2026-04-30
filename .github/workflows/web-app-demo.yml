@@ -29,9 +29,12 @@ jobs:
       # - name: Run Security Scan (Bandit)
       #   run: bandit -r .
       - name: Run Security Scan (Bandit)
-        run: |
-          bandit -r .
+        run: bandit -r .
         continue-on-error: true
+      # - name: Run Security Scan (Bandit)
+      #   run: |
+      #     bandit -r .
+      #   continue-on-error: true
 
   docker-deploy:
     runs-on: ubuntu-latest
